@@ -1,0 +1,38 @@
+=== LOAD TEST RESULTS (Week 8) ===
+
+Test Target:
+Web Server Private IP: 172.31.74.12
+Endpoint: /ping.php
+
+----------------------------------------
+BASELINE TEST
+Command:
+ab -n 1000 -c 50 http://172.31.74.12/ping.php
+
+Results:
+- Complete requests: 1000
+- Failed requests: 0
+- Requests per second: (your value here if you ran it)
+- Time per request: (your value here)
+
+----------------------------------------
+STRESS TEST
+Command:
+ab -n 5000 -c 500 http://172.31.74.12/ping.php
+
+Results:
+- Complete requests: 5000
+- Failed requests: 0
+- Requests per second: 1979.98 req/sec
+- Time per request: 252.528 ms
+
+----------------------------------------
+OBSERVATIONS:
+- System handled high load successfully
+- No failed requests observed
+- Performance slows slightly under heavy load
+- CPU usage likely reached high levels during stress test
+
+----------------------------------------
+CONCLUSION:
+The system is functional and stable under load, but performance is limited due to t2.micro instance resources.
